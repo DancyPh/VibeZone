@@ -6,7 +6,7 @@ import { theme } from '../../constants/theme'
 import Header from '../../components/Header'
 import { Image } from 'expo-image'
 import { useAuth } from '../../contexts/AuthContext'
-import { getUserImageSrc } from '../../services/imgService'
+import { getUserImageSrc, uploadFile } from '../../services/imgService'
 import Icon from '../../assets/icons'
 import Input from '../../components/Input'
 import Button from '../../components/Button'
@@ -63,8 +63,13 @@ const EditProfile = () => {
 
         setLoading(true);
         if(typeof image == 'object'){
+            let imageResult = await uploadFile('profiles', image?.uri, true);
+            if(imageResult.success) userData.image = imageResult.data;
+            else userData.image = null;
 
         }
+
+        console.log(userData)
 
         
         const res = await updateUser(currentUser?.id, userData);
