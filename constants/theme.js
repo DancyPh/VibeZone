@@ -6,7 +6,8 @@ export const theme = {
         subBgPrimary: '#BCAAAF', // chiffon - block title
         primary: '#496DA2', // steel blue
         dark: '#000000',
-        
+        textLight: '#6E6E6E',
+        darkLight: '#C0C0C0',
         subTextPrimary: '#FFFFFF',
 
         rose: '#ef4444',

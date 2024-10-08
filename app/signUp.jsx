@@ -71,7 +71,7 @@ const SignUp = () => {
 
               <Input
                 icon={<Icon name="user" size= {26} strokeWidth={1.6}/>}
-                placeholder='Enter your email'
+                placeholder='Enter your name'
                 onChangeText = {value=> nameRef.current = value}
               />
 

@@ -12,17 +12,17 @@ import Avatar from '../../components/Avatar';
 
 const Home = () => {
   const {user, setAuth} = useAuth();
-  console.log("user: ", user) 
+  //console.log("user: ", user) 
 
   const router = useRouter();
 
-  const onLogOut = async () => {
-    //setAuth(null);
-    const {error} = await supabase.auth.signOut();
-    if(error){
-      Alert.alert("Sign out", "Error signing out!")
-    }
-  }
+  // const onLogOut = async () => {
+  //   //setAuth(null);
+  //   const {error} = await supabase.auth.signOut();
+  //   if(error){
+  //     Alert.alert("Sign out", "Error signing out!")
+  //   }
+  // }
   return (
     <ScreenWrapper>
       <View style={styles.container}>
@@ -47,7 +47,7 @@ const Home = () => {
               </View>
           </View>
       </View>
-      <Button title='log out' onPress={onLogOut}/>
+      {/* <Button title='log out' onPress={onLogOut}/> */}
     </ScreenWrapper>
   )
 }
